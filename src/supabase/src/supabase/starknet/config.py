@@ -16,15 +16,18 @@ STARKNET_USDC_TOKEN_ADDRESS = (
 )
 
 # Circle CCTP (Cross-Chain Transfer Protocol) Testnet Contract Addresses
+# Note: Some contracts share the same address as they handle multiple functions
 CCTP_TOKEN_MESSENGER_ADDRESS = (
     "0x04bDdE1E09a4B09a2F95d893D94a967b7717eB85A3f6dEcA8c080Ee01fBc3370"
 )
 CCTP_MESSAGE_TRANSMITTER_ADDRESS = (
     "0x04db7926C64f1f32a840F3Fa95cB551f3801a3600Bae87aF87807A54DCE12Fe8"
 )
+# TokenMinterV2 shares address with TokenMessengerV2
 CCTP_TOKEN_MINTER_ADDRESS = (
     "0x04bDdE1E09a4B09a2F95d893D94a967b7717eB85A3f6dEcA8c080Ee01fBc3370"
 )
+# MessageV2 shares address with MessageTransmitterV2
 CCTP_MESSAGE_V2_ADDRESS = (
     "0x04db7926C64f1f32a840F3Fa95cB551f3801a3600Bae87aF87807A54DCE12Fe8"
 )
