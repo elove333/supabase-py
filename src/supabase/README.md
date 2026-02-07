@@ -24,14 +24,36 @@ conda install -c conda-forge supabase
 
 ## Usage
 
-Set your Supabase environment variables in a dotenv file, or using the shell:
+### Environment Variables
+
+**For Python Backend (Server-side)**
+
+This Python library is designed for server-side use. Set your Supabase environment variables in a dotenv file, or using the shell:
 
 ```bash
 export SUPABASE_URL="my-url-to-my-awesome-supabase-instance"
 export SUPABASE_KEY="my-supa-dupa-secret-supabase-api-key"
 ```
 
-Init client:
+**For Vite Frontend (Client-side)**
+
+If you're using a Vite-based frontend alongside your Python backend, note that Vite requires environment variables to be prefixed with `VITE_` to be exposed to browser code:
+
+```bash
+# In your .env file for Vite
+VITE_SUPABASE_URL="my-url-to-my-awesome-supabase-instance"
+VITE_SUPABASE_ANON_KEY="my-supa-dupa-anon-key"
+```
+
+Access them in your frontend code using:
+```javascript
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
+```
+
+**Important**: Use the `SUPABASE_ANON_KEY` (anonymous/public key) in your frontend, not your service role key.
+
+### Initialize Python Client
 
 ```python
 import os
