@@ -51,7 +51,7 @@ const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
 ```
 
-**Important**: Use the `SUPABASE_ANON_KEY` (anonymous/public key) in your frontend, not your service role key.
+**Important**: The value for `VITE_SUPABASE_ANON_KEY` should be your project's anonymous/public key (anon key) from your Supabase dashboard, not your service role key, which should remain private on the server.
 
 ### Initialize Python Client
 
