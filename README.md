@@ -13,6 +13,26 @@ Python monorepo for all [Supabase](https://supabase.com) libraries.
 - [postgrest](src/postgrest/README.md)
 - [supabase_auth](src/auth/README.md)
 
+## ⭐ New: Starknet USDC Integration
+
+Support for Circle's Native USDC on Starknet testnet and CCTP (Cross-Chain Transfer Protocol):
+
+```python
+from supabase.starknet import (
+    get_usdc_balance,
+    get_cctp_contracts,
+    STARKNET_USDC_TOKEN_ADDRESS
+)
+
+# Query USDC balance on Starknet
+balance = get_usdc_balance("0x0512feAc6339Ff7889822cb5aA2a86C848e9D392bB0E3E237C008674feeD8343")
+
+# Get CCTP contract addresses
+contracts = get_cctp_contracts()
+```
+
+📚 [Full Starknet Integration Documentation](docs/starknet_integration.md)
+
 Relevant links:
 
 - Documentation: [supabase.com/docs](https://supabase.com/docs/reference/python/introduction)
