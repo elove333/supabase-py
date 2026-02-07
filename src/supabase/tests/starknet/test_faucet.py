@@ -1,13 +1,12 @@
 """Tests for Starknet faucet utilities."""
 
-import pytest
 
+from supabase.starknet.config import USDC_FAUCET_URL
 from supabase.starknet.faucet import (
     format_faucet_request,
     get_faucet_info,
     get_faucet_usage_guide,
 )
-from supabase.starknet.config import USDC_FAUCET_URL
 
 
 class TestGetFaucetInfo:
@@ -22,7 +21,14 @@ class TestGetFaucetInfo:
         """Test that faucet info contains all required fields."""
         info = get_faucet_info()
 
-        required_fields = ["url", "name", "description", "instructions", "network", "token"]
+        required_fields = [
+            "url",
+            "name",
+            "description",
+            "instructions",
+            "network",
+            "token",
+        ]
         for field in required_fields:
             assert field in info
 
@@ -108,7 +114,10 @@ class TestGetFaucetUsageGuide:
         guide = get_faucet_usage_guide()
         assert "USDC" in guide
         assert "Decimals: 6" in guide
-        assert "0x0512feAc6339Ff7889822cb5aA2a86C848e9D392bB0E3E237C008674feeD8343" in guide
+        assert (
+            "0x0512feAc6339Ff7889822cb5aA2a86C848e9D392bB0E3E237C008674feeD8343"
+            in guide
+        )
 
     def test_includes_important_notes(self):
         """Test that guide includes important notes."""

@@ -1,6 +1,5 @@
 """Tests for Starknet configuration module."""
 
-import pytest
 
 from supabase.starknet.config import (
     CCTP_MESSAGE_TRANSMITTER_ADDRESS,

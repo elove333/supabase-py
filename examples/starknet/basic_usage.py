@@ -10,7 +10,9 @@ import sys
 from pathlib import Path
 
 # Add src to path for direct execution
-sys.path.insert(0, str(Path(__file__).parent.parent.parent / "src" / "supabase" / "src"))
+sys.path.insert(
+    0, str(Path(__file__).parent.parent.parent / "src" / "supabase" / "src")
+)
 
 # Import directly from starknet module to avoid full supabase dependencies
 from supabase.starknet.config import (
@@ -67,14 +69,18 @@ def main():
 
     # Example 4: Balance Query
     print("\n4. Balance Query:")
-    wallet_address = "0x0512feAc6339Ff7889822cb5aA2a86C848e9D392bB0E3E237C008674feeD8343"
+    wallet_address = (
+        "0x0512feAc6339Ff7889822cb5aA2a86C848e9D392bB0E3E237C008674feeD8343"
+    )
     print(f"   Querying balance for: {wallet_address[:20]}...")
 
     try:
         balance_info = get_usdc_balance(wallet_address)
         print(f"   Token: {balance_info['token']}")
         print(f"   Network: {balance_info['network']}")
-        print(f"   Balance: {balance_info['balance_formatted']} {balance_info['token']}")
+        print(
+            f"   Balance: {balance_info['balance_formatted']} {balance_info['token']}"
+        )
         print(f"   Note: {balance_info.get('note', 'N/A')}")
     except ValueError as e:
         print(f"   Error: {e}")

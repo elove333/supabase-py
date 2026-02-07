@@ -10,7 +10,9 @@ import sys
 from pathlib import Path
 
 # Add src to path for direct execution
-sys.path.insert(0, str(Path(__file__).parent.parent.parent / "src" / "supabase" / "src"))
+sys.path.insert(
+    0, str(Path(__file__).parent.parent.parent / "src" / "supabase" / "src")
+)
 
 # Import directly from starknet module to avoid full supabase dependencies
 from supabase.starknet.cctp import (
@@ -40,7 +42,9 @@ def main():
 
     # Example 2: Prepare Cross-Chain Message
     print("\n2. Prepare Cross-Chain Message:")
-    sender_address = "0x0512feAc6339Ff7889822cb5aA2a86C848e9D392bB0E3E237C008674feeD8343"
+    sender_address = (
+        "0x0512feAc6339Ff7889822cb5aA2a86C848e9D392bB0E3E237C008674feeD8343"
+    )
     recipient_address = "0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb"
 
     message_params = prepare_send_message(

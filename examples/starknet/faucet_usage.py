@@ -10,7 +10,9 @@ import sys
 from pathlib import Path
 
 # Add src to path for direct execution
-sys.path.insert(0, str(Path(__file__).parent.parent.parent / "src" / "supabase" / "src"))
+sys.path.insert(
+    0, str(Path(__file__).parent.parent.parent / "src" / "supabase" / "src")
+)
 
 # Import directly from starknet module to avoid full supabase dependencies
 from supabase.starknet.config import USDC_FAUCET_URL
@@ -40,7 +42,9 @@ def main():
 
     # Example 2: Format Faucet Request
     print("\n2. Format Faucet Request:")
-    wallet_address = "0x0512feAc6339Ff7889822cb5aA2a86C848e9D392bB0E3E237C008674feeD8343"
+    wallet_address = (
+        "0x0512feAc6339Ff7889822cb5aA2a86C848e9D392bB0E3E237C008674feeD8343"
+    )
 
     if validate_starknet_address(wallet_address):
         request = format_faucet_request(wallet_address)
@@ -49,7 +53,7 @@ def main():
         print(f"   Faucet URL: {request['faucet_url']}")
         print(f"   Network: {request['network']}")
         print("\n   Instructions:")
-        for line in request['instructions'].split('\n'):
+        for line in request["instructions"].split("\n"):
             if line.strip():
                 print(f"   {line}")
     else:
@@ -61,7 +65,7 @@ def main():
     guide = get_faucet_usage_guide()
 
     # Print first few lines of the guide
-    guide_lines = guide.strip().split('\n')
+    guide_lines = guide.strip().split("\n")
     for i, line in enumerate(guide_lines[:15]):
         print(f"   {line}")
 
