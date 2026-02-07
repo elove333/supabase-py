@@ -5,7 +5,7 @@ This module provides functions for interacting with Circle's CCTP contracts
 on Starknet testnet, enabling cross-chain messaging and token transfers.
 """
 
-from typing import Dict, Optional
+from typing import Any, Dict, Optional
 
 from .config import (
     CCTP_MESSAGE_TRANSMITTER_ADDRESS,
@@ -41,7 +41,7 @@ def prepare_send_message(
     recipient: str,
     message_body: bytes,
     sender: Optional[str] = None,
-) -> Dict[str, any]:
+) -> Dict[str, Any]:
     """
     Prepare a cross-chain message to be sent via CCTP.
 
@@ -84,7 +84,7 @@ def prepare_send_message(
 
 def prepare_mint_tokens(
     amount: int, destination_address: str, mint_recipient: str
-) -> Dict[str, any]:
+) -> Dict[str, Any]:
     """
     Prepare parameters for minting tokens via TokenMinter contract.
 
@@ -126,7 +126,7 @@ def prepare_mint_tokens(
     }
 
 
-def get_message_status(message_hash: str) -> Dict[str, any]:
+def get_message_status(message_hash: str) -> Dict[str, Any]:
     """
     Get the status of a cross-chain message.
 
